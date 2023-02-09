@@ -5,6 +5,8 @@
  */
 package FibonacciOBJ;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Fer
@@ -49,6 +51,11 @@ public class AppFibonacci extends javax.swing.JFrame {
         getContentPane().add(Ejecutar_btn, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
 
         btn_serie.setText("Mostrar Serie");
+        btn_serie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_serieActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_serie, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, -1, -1));
         getContentPane().add(txt_valor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 60, -1));
 
@@ -72,10 +79,8 @@ public class AppFibonacci extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Ejecutar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ejecutar_btnActionPerformed
-        // TODO add your handling code here:
-        
-        int termino = Integer.parseInt(txt_termino.getText());
-        
+        // TODO add your handling code here:        
+        int termino = Integer.parseInt(txt_termino.getText());      
         txt_valor.setText(String.valueOf(Fibonacci.FiboValor(termino)));
     }//GEN-LAST:event_Ejecutar_btnActionPerformed
 
@@ -83,6 +88,12 @@ public class AppFibonacci extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btn_salirActionPerformed
+
+    private void btn_serieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_serieActionPerformed
+        // TODO add your handling code here:
+        ;
+        JOptionPane.showMessageDialog(null, Fibonacci.FiboSerie(Integer.parseInt(txt_termino.getText())), "Serie de Fibonacci", 1);
+    }//GEN-LAST:event_btn_serieActionPerformed
 
     /**
      * @param args the command line arguments
